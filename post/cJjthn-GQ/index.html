@@ -1,0 +1,171 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>12.23 | 海船Lee</title>
+<meta name="description" content="心之所向,一苇以航" />
+<link rel="shortcut icon" href="https://tx874300.coding.me//favicon.ico?v=1578386241043">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://tx874300.coding.me//styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://tx874300.coding.me/">
+  <img class="avatar" src="https://tx874300.coding.me//images/avatar.png?v=1578386241043" alt="">
+  </a>
+  <h1 class="site-title">
+    海船Lee
+  </h1>
+  <p class="site-description">
+    心之所向,一苇以航
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              12.23
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-12-23
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+                <a href="https://tx874300.coding.me/tag/0PV4Phj8M" class="post-tag">
+                  # DailyLife
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>something just like this(megamix)/书的整理</p>
+<!-- more -->
+<p>  10:22<br>
+  网易云神奇的日推.前两天在旺仔的年终MAD总结下评论了umbrella作为旺仔2019年的开篇,使用umbrella作为结尾也算有始有终,结果还被大佬翻牌子了.直到刚刚网易云给我推了这首欧美女声串烧......我本来以为some thing just like this(megamix)是一首歌,umbrella是大佬自己接的,现在听着原来是串烧emmmmm.不过网易云的日推还是很神奇的.<br>
+  21:22<br>
+  下午开始整理看过的书，整理了一晚上emmmm发现现在自己的语言组织能力下降了好多。两句话能有一句是别句。我觉得我讲话时讲述混乱与短句以及碎片化语句交流也有关系。</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://tx874300.coding.me/post/PSOyIrnac">
+              <h3 class="post-title">
+                冬至和饺子
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+   | 
+  <a class="rss" href="https://tx874300.coding.me//atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

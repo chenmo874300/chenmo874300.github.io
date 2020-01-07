@@ -1,0 +1,177 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>12.31 | 海船Lee</title>
+<meta name="description" content="心之所向,一苇以航" />
+<link rel="shortcut icon" href="https://tx874300.coding.me//favicon.ico?v=1578386241043">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://tx874300.coding.me//styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://tx874300.coding.me/">
+  <img class="avatar" src="https://tx874300.coding.me//images/avatar.png?v=1578386241043" alt="">
+  </a>
+  <h1 class="site-title">
+    海船Lee
+  </h1>
+  <p class="site-description">
+    心之所向,一苇以航
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              12.31
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-12-31
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+                <a href="https://tx874300.coding.me/tag/0PV4Phj8M" class="post-tag">
+                  # DailyLife
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>算是总结，也算是开始</p>
+<!-- more -->
+<p>  22:10<br>
+  18年的结束大约像是暗色的幕布。以<code>吹响吧!上低音号 第一季</code>所谓美好的结束的，与之形成鲜明对比的是2019年的开篇，是从<code>新世纪福音战士</code>开始的。本来是不喜欢机甲的，只是大概有与主角一样糟糕的心情吧。<br>
+  2019年的三件事<br>
+  入坑mad<br>
+  入宅<br>
+  研究生的第一年<br>
+  关于mad，对未来一年抱有的好奇是，由于踮脚效应导致群魔乱舞的mad区将何去何从。没有填的坑的话，也许就剩下<code>如果我们不曾相遇</code>了。还有一半的<code>Tony Igy-Astronomia</code>。其实想法挺多，就是条理不是很顺，所以效率不大高，找个时间应该好好理一理。<br>
+  关于入宅，今年应该是看完了当前几乎想看的能看的所有的番剧。未来如果有可能的话，应该会去了解一下日本的动画产业--有条理性的(虽然早在一两年前就已经有这个想法了)。<br>
+  关于研究生的第一年，其实是第一个半年，再加上在深圳实习的半年，要说多深刻的印象，大概也是没有的。<br>
+  要说一年有什么想法的话，一年后的今天比一年前的同一天要顺意一点，大概就是这样吧。</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://tx874300.coding.me/post/4ZU3lWF_y">
+              <h3 class="post-title">
+                12.24
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+   | 
+  <a class="rss" href="https://tx874300.coding.me//atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
