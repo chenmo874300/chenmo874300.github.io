@@ -1,171 +1,156 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>冬至和饺子 | 海船Lee</title>
-<meta name="description" content="心之所向,一苇以航" />
-<link rel="shortcut icon" href="https://tx874300.coding.me//favicon.ico?v=1578386241043">
+<meta name="description" content="心之所向,一苇以航">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://tx874300.coding.me//favicon.ico?v=1578387409635">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://tx874300.coding.me//styles/main.css">
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://tx874300.coding.me/">
-  <img class="avatar" src="https://tx874300.coding.me//images/avatar.png?v=1578386241043" alt="">
-  </a>
-  <h1 class="site-title">
-    海船Lee
-  </h1>
-  <p class="site-description">
-    心之所向,一苇以航
-  </p>
-  <div class="menu-container">
-    
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://tx874300.coding.me/">
+        <img src="https://tx874300.coding.me//images/avatar.png?v=1578387409635" class="site-logo">
+        <h1 class="site-title">海船Lee</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
       
-        <a href="/" class="menu">
-          首页
-        </a>
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
       
-    
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
       
-        <a href="/archives" class="menu">
-          归档
-        </a>
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
       
-    
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
       
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    </div>
   </div>
-  <div class="social-container">
-    
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
       
-    
+        
       
-    
+        
       
-    
+        
       
-    
+        
       
-    
+        
+      
+    </div>
+    <div class="site-description">
+      心之所向,一苇以航
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://tx874300.coding.me//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
 
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              冬至和饺子
-            </h2>
-            <div class="post-info">
-              <span>
-                2019-12-22
-              </span>
-              <span>
-                2 min read
-              </span>
-              
-                <a href="https://tx874300.coding.me/tag/cyFQq3y9a" class="post-tag">
-                  # 热爱生活
-                </a>
-              
-            </div>
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">冬至和饺子</h2>
+            <div class="post-date">2019-12-22</div>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <p>  饺子与我无关.</p>
+            <div class="post-content">
+              <p>  饺子与我无关.</p>
 <!-- more -->
 <p>  大一的时候,某天吃晚饭的时候看见窗口一溜人儿.想着这家饺子店平时也没什么人气呀,怎么非得吃上那一口饺子.后来一查,是冬至.冬至吃饺子,在我家,是没有这样的习惯的.也不说南方是否有,不说杭州是否有,反正我家没有.我家饺子肯定会吃的日子只有除夕与春节,当然其后的几天也算.爷爷家是,外婆家也是.<br>
   本来想着今天随大流去吃一次饺子,人家还不给做汤饺.大概因为今天吃饺子的人多,汤饺费事也不差你一个.可汤在我看来是饺子的灵魂,嫌麻烦说不做就不做了?北方人吃的多的应该就是盘装的白汤里捞上来的饺子,蘸酱吃.而我家,加点榨菜葱花,撒点盐,搞点猪油,加汤入饺,才算一碗饺子的真正完成.<br>
   年年冬夏至都在学校过,也没啥感觉了.在家这一天会吃的好一些,倒是真的.刚给外婆打了电话,还特别嘱咐这两天别出去.礼拜四晚上大组还要吃饭呢,算不算是这两天(差四天应该不算了吧).<br>
   抬头望望天,明天开始.黑夜就变短了.</p>
 
-              </div>
-              <div class="toc-container">
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://tx874300.coding.me/tag/cyFQq3y9a" class="tag">
+                    热爱生活
+                  </a>
                 
               </div>
-            </div>
-          </article>
-        </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://tx874300.coding.me/post/zoTphswBw">
+                  <h3 class="post-title">
+                    12.22
+                  </h3>
+                </a>
+              </div>
+            
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://tx874300.coding.me/post/zoTphswBw">
-              <h3 class="post-title">
-                12.22
-              </h3>
-            </a>
+            
+
           </div>
-        
 
-        
+        </div>
+      </div>
+    </div>
 
-        <div class="site-footer">
-   | 
-  <a class="rss" href="https://tx874300.coding.me//atom.xml" target="_blank">RSS</a>
-</div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-<script>
-  hljs.initHighlightingOnLoad()
+<script type="application/javascript">
 
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+AOS.init();
 
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
+hljs.initHighlightingOnLoad()
 
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
-      </div>
-    </div>
+
+
+
   </body>
 </html>

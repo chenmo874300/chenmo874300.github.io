@@ -1,186 +1,185 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>关于知乎问题‘如何看待同行质疑女护士施救不专业’的I&amp;C | 海船Lee</title>
-<meta name="description" content="心之所向,一苇以航" />
-<link rel="shortcut icon" href="https://tx874300.coding.me//favicon.ico?v=1578386241043">
+<meta name="description" content="心之所向,一苇以航">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://tx874300.coding.me//favicon.ico?v=1578387409635">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://tx874300.coding.me//styles/main.css">
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://tx874300.coding.me/">
-  <img class="avatar" src="https://tx874300.coding.me//images/avatar.png?v=1578386241043" alt="">
-  </a>
-  <h1 class="site-title">
-    海船Lee
-  </h1>
-  <p class="site-description">
-    心之所向,一苇以航
-  </p>
-  <div class="menu-container">
-    
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://tx874300.coding.me/">
+        <img src="https://tx874300.coding.me//images/avatar.png?v=1578387409635" class="site-logo">
+        <h1 class="site-title">海船Lee</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
       
-        <a href="/" class="menu">
-          首页
-        </a>
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
       
-    
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
       
-        <a href="/archives" class="menu">
-          归档
-        </a>
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
       
-    
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
       
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    </div>
   </div>
-  <div class="social-container">
-    
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
       
-    
+        
       
-    
+        
       
-    
+        
       
-    
+        
       
-    
+        
+      
+    </div>
+    <div class="site-description">
+      心之所向,一苇以航
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://tx874300.coding.me//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
 
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              关于知乎问题‘如何看待同行质疑女护士施救不专业’的I&amp;C
-            </h2>
-            <div class="post-info">
-              <span>
-                2020-01-07
-              </span>
-              <span>
-                3 min read
-              </span>
-              
-            </div>
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">关于知乎问题‘如何看待同行质疑女护士施救不专业’的I&amp;C</h2>
+            <div class="post-date">2020-01-07</div>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <p>  【#同行质疑救人女护士施救不专业#：精神可嘉，方法错了】1月2日，云南昆明，一男孩在路上突然倒地，没有呼吸心脏骤停。一女护士正好路过，立即跪地对其进行胸外心脏按压。经过近2分钟的按压后，男孩终于恢复心跳。随后，男孩被送医经治疗已无大碍，网友纷纷点赞。4日，急救专业人士@急诊夜鹰 发声质疑，“救援视频中没有看到，女护士判断病人是否有反应有呼吸。”他表示精神可嘉，但方法错了一定要指出来，“她是医务人员，不是普通人。”杨护士所在医院同事表示，不方便回答急救是否专业的问题。<br>
+            <div class="post-content">
+              <p>  【#同行质疑救人女护士施救不专业#：精神可嘉，方法错了】1月2日，云南昆明，一男孩在路上突然倒地，没有呼吸心脏骤停。一女护士正好路过，立即跪地对其进行胸外心脏按压。经过近2分钟的按压后，男孩终于恢复心跳。随后，男孩被送医经治疗已无大碍，网友纷纷点赞。4日，急救专业人士@急诊夜鹰 发声质疑，“救援视频中没有看到，女护士判断病人是否有反应有呼吸。”他表示精神可嘉，但方法错了一定要指出来，“她是医务人员，不是普通人。”杨护士所在医院同事表示，不方便回答急救是否专业的问题。<br>
 以上是问题描述。<br>
-以下是最高赞<br>
-你知道插着腰看的人比做事的人多一项什么权利吗？<br>
+以下是最高赞</p>
+<blockquote>
+<p>你知道插着腰看的人比做事的人多一项什么权利吗？<br>
 就是指手画脚权。<br>
 你怕是从视频看出她年轻，就站在过来人的角度把人家批判一番，显得自己很高大上是吗？<br>
 东西不会，可以再学<br>
 血凉了，就很难热起来了<br>
 最后如果当事护士能看到，我想对你说<br>
 千万不要因为这件事影响你，你很棒！真的很棒<br>
-救自己的人，让贱人pp去<br>
-  没错我就是想把高赞的答案拿来批评一番。回答中高赞的几个回答这样质疑积极主动去救助别人的行为是不对的，立场是：<br>
-我们应该在有能力的情况下救助这些（突发状况下需要心肺复苏的人），而不应该因为施救不专业而受到攻击。<br>
-  这个立场我赞同，并且认为正确。但是说实话我觉得愚蠢的善良比善良更可怕。愚蠢的善意被情绪引导然后到评论里就变成了<code>你行你上</code>、<code>叉腰说话</code><br>
-  我去看了一下原视频，原话是这么说的:<br>
-她的精神可以宣传，但错误要指出来。她作为一名医务人员需要会正确的方法<br>
-  所以这个问题原本应该应该有这两个立场<br>
-立场1<br>
-主动施救精神值得宣传<br>
-立场2<br>
-作为医护同行却没有掌握正确的心肺复苏方法，需要反思<br>
-  这两个立场我也都赞同。既然大家的立场在我看来没有什么问题，为什么还会有这样的矛盾呢。描述方式与引导的问题，倘若报道新闻的时候正常合理地报道，大概就没有什么人关注吧。<br>
+救自己的人，让贱人pp去</p>
+</blockquote>
+<p>  没错我就是想把高赞的答案拿来批评一番。回答中高赞的几个回答这样质疑积极主动去救助别人的行为是不对的，立场是：</p>
+<blockquote>
+<p>我们应该在有能力的情况下救助这些（突发状况下需要心肺复苏的人），而不应该因为施救不专业而受到攻击。</p>
+</blockquote>
+<p>  这个立场我赞同，并且认为正确。但是说实话我觉得愚蠢的善良比善良更可怕。愚蠢的善意被情绪引导然后到评论里就变成了<code>你行你上</code>、<code>叉腰说话</code><br>
+  我去看了一下原视频，原话是这么说的:</p>
+<blockquote>
+<p>她的精神可以宣传，但错误要指出来。她作为一名医务人员需要会正确的方法</p>
+</blockquote>
+<p>  所以这个问题原本应该应该有这两个立场<br>
+<strong>立场1</strong></p>
+<blockquote>
+<p>主动施救精神值得宣传</p>
+</blockquote>
+<p><strong>立场2</strong></p>
+<blockquote>
+<p>作为医护同行却没有掌握正确的心肺复苏方法，需要反思</p>
+</blockquote>
+<p>  这两个立场我也都赞同。既然大家的立场在我看来没有什么问题，为什么还会有这样的矛盾呢。描述方式与引导的问题，倘若报道新闻的时候正常合理地报道，大概就没有什么人关注吧。<br>
   媒体故意引导制造矛盾与对立利用愚蠢的善良(其实善良并没有愚蠢聪明之分)获取流量的目的。<br>
   只是我觉得这是利用个体对于通过'维护正义'等形式来实现自我价值体现的需要，但恰好脑子不大灵光或者只乐于停留在浅层的思考(美妙的新世界，娱乐至死)，所以就成为了这个问题下'你行你上'的一股力量。其本质还是发泄自己情绪的需要。(关于这方面我觉得还可以思考的再深一点)</p>
 <p>  脑子是个好东西，我希望我自己有一个。我不觉得遗世独立，我只希望自己能够再清醒一点。</p>
 
-              </div>
-              <div class="toc-container">
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://tx874300.coding.me/tag/Y1zouErXK" class="tag">
+                    I&amp;C
+                  </a>
                 
               </div>
-            </div>
-          </article>
-        </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://tx874300.coding.me/post/vUz3e1d8M">
+                  <h3 class="post-title">
+                    20.1.4
+                  </h3>
+                </a>
+              </div>
+            
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://tx874300.coding.me/post/vUz3e1d8M">
-              <h3 class="post-title">
-                20.1.4
-              </h3>
-            </a>
+            
+
           </div>
-        
 
-        
+        </div>
+      </div>
+    </div>
 
-        <div class="site-footer">
-   | 
-  <a class="rss" href="https://tx874300.coding.me//atom.xml" target="_blank">RSS</a>
-</div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-<script>
-  hljs.initHighlightingOnLoad()
+<script type="application/javascript">
 
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+AOS.init();
 
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
+hljs.initHighlightingOnLoad()
 
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
-      </div>
-    </div>
+
+
+
   </body>
 </html>

@@ -1,97 +1,102 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>书 | 海船Lee</title>
-<meta name="description" content="心之所向,一苇以航" />
-<link rel="shortcut icon" href="https://tx874300.coding.me//favicon.ico?v=1578386241043">
+<meta name="description" content="心之所向,一苇以航">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://tx874300.coding.me//favicon.ico?v=1578387409635">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://tx874300.coding.me//styles/main.css">
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://tx874300.coding.me/">
-  <img class="avatar" src="https://tx874300.coding.me//images/avatar.png?v=1578386241043" alt="">
-  </a>
-  <h1 class="site-title">
-    海船Lee
-  </h1>
-  <p class="site-description">
-    心之所向,一苇以航
-  </p>
-  <div class="menu-container">
-    
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://tx874300.coding.me/">
+        <img src="https://tx874300.coding.me//images/avatar.png?v=1578387409635" class="site-logo">
+        <h1 class="site-title">海船Lee</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
       
-        <a href="/" class="menu">
-          首页
-        </a>
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
       
-    
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
       
-        <a href="/archives" class="menu">
-          归档
-        </a>
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
       
-    
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
       
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    </div>
   </div>
-  <div class="social-container">
-    
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
       
-    
+        
       
-    
+        
       
-    
+        
       
-    
+        
       
-    
+        
+      
+    </div>
+    <div class="site-description">
+      心之所向,一苇以航
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://tx874300.coding.me//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
 
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              书
-            </h2>
-            <div class="post-info">
-              <span>
-                2019-12-23
-              </span>
-              <span>
-                9 min read
-              </span>
-              
-                <a href="https://tx874300.coding.me/tag/cyFQq3y9a" class="post-tag">
-                  # 热爱生活
-                </a>
-              
-            </div>
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">书</h2>
+            <div class="post-date">2019-12-23</div>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <p>关于我看过的书</p>
+            <div class="post-content">
+              <p>关于我看过的书</p>
 <!-- more -->
 <p>  给一个远方的朋友推荐一些我喜欢的书。本来打算大笔一挥洋洋洒洒就结束了的，结果自己功力太浅，挥了两下嫌弃笔头水不够，就来这个地方继续了。<br>
   小时候我在我妈眼里是个&quot;还爱看书&quot;的孩子，甚至最后连我自己也这么觉得。想想我四年级就开始看小说，是那种《会有天使替我爱你》这样名字的言情小说，还感动的稀里哗啦的非要自己收藏一本。这本书至今保存完好，现在还在我家中的床头柜上放着。其后也涉猎了一些侦探悬疑小说，甚至一度沉迷其中。未满十二周岁还骑着脚踏车周末就往小破县城的图书馆跑，囫囵吞枣地看，书名与内容一概不记得了。现在想来还好被我阿姨一顿劈头盖脸地骂了一顿。其后就再也没看这些杂七杂八的小说了。<br>
@@ -204,112 +209,54 @@
   书读的太少了，以后应该还能再多些。<br>
   海船于2019年12月23日。</p>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#%E4%B9%A6%E7%9B%AE%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5">书目参考链接</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E5%9B%BD%E5%86%85%E5%B0%8F%E8%AF%B4">国内小说</a><br>
-*
-<ul>
-<li><a href="#%E4%B8%89%E6%AF%9B-%E5%BC%A0%E7%88%B1%E7%8E%B2-%E8%90%A7%E7%BA%A2">三毛、张爱玲、萧红</a></li>
-<li><a href="#%E9%9F%A9%E5%AF%92">韩寒</a></li>
-<li><a href="#%E5%88%98%E6%85%88%E6%AC%A3">刘慈欣</a></li>
-</ul>
-</li>
-<li><a href="#%E6%97%A5%E6%9C%AC%E4%BD%9C%E5%AE%B6%E5%8F%8A%E4%BD%9C%E5%93%81">日本作家及作品</a><br>
-*
-<ul>
-<li><a href="#%E4%B8%9C%E9%87%8E%E5%9C%AD%E5%90%BE">东野圭吾</a></li>
-<li><a href="#%E6%9D%91%E4%B8%8A%E6%98%A5%E6%A0%91">村上春树</a></li>
-<li><a href="#%E5%B7%9D%E7%AB%AF%E5%BA%B7%E6%88%90">川端康成</a></li>
-<li><a href="#%E5%A4%AA%E5%AE%B0%E6%B2%BB">太宰治</a></li>
-<li><a href="#%E5%B2%A9%E4%BA%95%E4%BF%8A%E4%BA%8C">岩井俊二</a></li>
-</ul>
-</li>
-<li><a href="#%E5%85%B6%E4%BB%96%E5%9B%BD%E5%AE%B6%E5%B0%8F%E8%AF%B4%E4%BD%9C%E5%93%81%E6%8E%A8%E8%8D%90">其他国家小说作品推荐</a><br>
-*
-<ul>
-<li><a href="#%E8%87%AA%E6%88%91%E4%BB%B7%E5%80%BC%E5%AF%BB%E6%89%BE%E7%B1%BB">自我价值寻找类</a></li>
-<li><a href="#%E5%8F%8D%E4%B9%8C%E6%89%98%E9%82%A6%E7%B3%BB%E5%88%97">反乌托邦系列</a></li>
-</ul>
-</li>
-<li><a href="#%E5%85%B6%E4%BD%99%E7%B1%BB%E5%88%AB">其余类别</a></li>
-<li><a href="#%E6%9C%80%E5%90%8E">最后</a></li>
-</ul>
-
-              </div>
             </div>
-          </article>
-        </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://tx874300.coding.me/tag/cyFQq3y9a" class="tag">
+                    热爱生活
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://tx874300.coding.me/post/cJjthn-GQ">
+                  <h3 class="post-title">
+                    12.23
+                  </h3>
+                </a>
+              </div>
+            
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://tx874300.coding.me/post/cJjthn-GQ">
-              <h3 class="post-title">
-                12.23
-              </h3>
-            </a>
+            
+
           </div>
-        
 
-        
+        </div>
+      </div>
+    </div>
 
-        <div class="site-footer">
-   | 
-  <a class="rss" href="https://tx874300.coding.me//atom.xml" target="_blank">RSS</a>
-</div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-<script>
-  hljs.initHighlightingOnLoad()
+<script type="application/javascript">
 
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+AOS.init();
 
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
+hljs.initHighlightingOnLoad()
 
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
-      </div>
-    </div>
+
+
+
   </body>
 </html>
