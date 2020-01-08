@@ -1,837 +1,676 @@
+<!DOCTYPE html>
 <html>
-  <head>
-      <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<head lang="zh">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta name="renderer" content="webkit">
+<meta name="description" content="心之所向,一苇以航">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+
 <title>海船Lee</title>
-<link rel="shortcut icon" href="https://tx874300.coding.me//favicon.ico?v=1578467287872">
-<link rel="stylesheet" href="https://tx874300.coding.me//styles/main.css">
-<meta name="description" content="心之所向,一苇以航" />
+<link href="https://tx874300.coding.me//styles/main.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.css"/>
+<script src="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.js"></script>
+<script src="//cdn.bootcss.com/KaTeX/0.10.2/contrib/auto-render.min.js"></script>
+<script type="text/javascript" src="https://tx874300.coding.me//media/scripts/jquery.js"></script>
+<script type="text/javascript" src="https://tx874300.coding.me//media/scripts/jquery.pjax.min.js"></script>
+<script type="text/javascript" src="https://tx874300.coding.me//media/scripts/basic.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script async type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery.min.js"></script>
+<script src="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.js"></script>
 
-<link rel="stylesheet" href="/media/fonts/font-awesome.css">
-<link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
   </head>
+
   <body>
-    <div class="head-top-line"></div>
-    <div class="header-box">
-      
-<header class="header">
-  <div class="blog-header" id="header">
-    <div class="site-meta">
-      <div class="nav-toggle" id="nav_toggle">
-        <div class="toggle-box">
-          <div class="line line-top"></div>
-          <div class="line line-center"></div>
-          <div class="line line-bottom"></div>
-        </div>
-      </div>
-      <div class="site-title">
-        <a href="/" class="brand">
-          <span>海船Lee</span>
-        </a>
-      </div>
-      <p class="subtitle">Quick notes</p>
-    </div>
-    <nav class="site-nav" id="site_nav">
-      <ul id="nav_ul">
-        
-          <li class="nav-item nav-item-active">
-            
-              <a href="/">
-                <i class="fa fa-home"></i> 首页
-              </a>
-            
-          </li>
-        
-          <li class="nav-item ">
-            
-              <a href="/archives">
-                <i class="fa fa-archive"></i> 归档
-              </a>
-            
-          </li>
-        
-          <li class="nav-item ">
-            
-              <a href="/tags">
-                <i class="fa fa-tags"></i> 标签
-              </a>
-            
-          </li>
-        
-          <li class="nav-item ">
-            
-              <a href="/post/about">
-                <i class="fa fa-info-circle"></i> 关于
-              </a>
-            
-          </li>
-        
-        <li class="nav-item">
-          <a>
-            <i class="fa fa-search"></i> 搜索
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
-<script type="text/javascript"> 
- 
-  let showNav = true;
-
-  let navToggle = document.querySelector('#nav_toggle'),
-  siteNav = document.querySelector('#site_nav');
-  
-  function navClick() {
-    let sideBar = document.querySelector('.sidebar');
-    let navUl = document.querySelector('#nav_ul');
-    navToggle.classList.toggle('nav-toggle-active');
-    siteNav.classList.toggle('nav-menu-active');
-    if (siteNav.classList.contains('nav-menu-active')) {
-      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
-    } else {
-      siteNav.style = "";
-    }
-  }
-
-  navToggle.addEventListener('click',navClick);  
-</script>
-    </div>
-    <div class="main-continer">
-      <div class="section-layout">
-        <div class="section-layout-wrapper">
-          <div class="sidebar">
-    <div class="sidebar-wrapper">
-  <div class="sidebar-item">
-    <img class="site-author-image" src="https://tx874300.coding.me//images/avatar.png"/>
-    <p class="site-author-name">海船Lee</p>
-    <p class="site-description">心之所向,一苇以航</p>
-  </div>
-  <div class="sidebar-item side-item-stat">
-    <div class="sidebar-item-box">
-      <a href="/archives/">
-        
-        <span class="site-item-stat-count">13</span>
-        <span class="site-item-stat-name">文章</span>
-      </a>
-    </div>
-    <div class="sidebar-item-box">
-      <a href="">
-        <span class="site-item-stat-count">4</span>
-        <span class="site-item-stat-name">分类</span>
-      </a>
-    </div>
-    <div class="sidebar-item-box">
-      <a href="/tags/">
-        <span class="site-item-stat-count">4</span>
-        <span class="site-item-stat-name">标签</span>
-      </a>
-    </div>
-  </div>
-  <div class="sidebar-item">
-    <span class="site-item-rss">
-        <i class="fa fa-rss"></i>
-        <a href="https://tx874300.coding.me//atom.xml" target="_blank">RSS</a>
-    </span>
-  </div>
-  <div class="sidebar-item sidebar-item-social">
-    <div class="social-item">
-      <a href="">
-        <i class="fa fa-github"></i> GitHub
-      </a>
-      <a href="">
-        <i class="fa fa-twitter"></i> Twitter
-      </a>
-    </div>
-    <div class="social-item">
-      <a href="">
-        <i class="fa fa-globe"></i> 豆瓣
-      </a>
-      <a href="">
-        <i class="fa fa-globe"></i> 知乎
-      </a>
-    </div>
-  </div>
-</div>
-</div>
-          <div class="section-box">
-            <section class="section posts-expand slide-down-in">
-              
-  <article class="post-list-box post">
-    <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://tx874300.coding.me/post/rJ3F-SQOd">
-      关于知乎问题‘如何看待同行质疑女护士施救不专业’的I&amp;C
-    </a>
-  </h1>
-  <div class="post-meta">
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2020-01-07</span>
-    </span>
-    
-      <span class="meta-item">
-        <span class="post-meta-divider pc-show">|</span>
-        <i class="fa fa-folder-o"></i>
-        <span class="pc-show">分类于</span>
-        
-          
-            <a href="https://tx874300.coding.me/tag/Y1zouErXK">
-              <span>I&amp;C</span>
-            </a>
-          
-        
-      </span>
-    
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-clock-o"></i>
-      <span>3分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>876<span class="pc-show">字数</span></span>
-    </span>
-  </div>
-</header>
-    <div class="post-body">
-      
-      <!--noindex-->
-      
-      <div class="post-button text-center">
-        <a class="btn" href="https://tx874300.coding.me/post/rJ3F-SQOd" rel="contents">
-          阅读全文 »
-        </a>
-      </div>
-      <!--/noindex-->
-      
-    </div>
-    <footer class="post-footer">
-      <div class="post-eof"></div>
-    </footer>
-  </article>
-
-  <article class="post-list-box post">
-    <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://tx874300.coding.me/post/vUz3e1d8M">
-      20.1.4
-    </a>
-  </h1>
-  <div class="post-meta">
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2020-01-04</span>
-    </span>
-    
-      <span class="meta-item">
-        <span class="post-meta-divider pc-show">|</span>
-        <i class="fa fa-folder-o"></i>
-        <span class="pc-show">分类于</span>
-        
-          
-            <a href="https://tx874300.coding.me/tag/0PV4Phj8M">
-              <span>DailyLife</span>
-            </a>
-          
-        
-      </span>
-    
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>313<span class="pc-show">字数</span></span>
-    </span>
-  </div>
-</header>
-    <div class="post-body">
-      
-      <!--noindex-->
-      
-      <div class="post-button text-center">
-        <a class="btn" href="https://tx874300.coding.me/post/vUz3e1d8M" rel="contents">
-          阅读全文 »
-        </a>
-      </div>
-      <!--/noindex-->
-      
-    </div>
-    <footer class="post-footer">
-      <div class="post-eof"></div>
-    </footer>
-  </article>
-
-  <article class="post-list-box post">
-    <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://tx874300.coding.me/post/4pTwUwOuE">
-      12.31
-    </a>
-  </h1>
-  <div class="post-meta">
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2019-12-31</span>
-    </span>
-    
-      <span class="meta-item">
-        <span class="post-meta-divider pc-show">|</span>
-        <i class="fa fa-folder-o"></i>
-        <span class="pc-show">分类于</span>
-        
-          
-            <a href="https://tx874300.coding.me/tag/0PV4Phj8M">
-              <span>DailyLife</span>
-            </a>
-          
-        
-      </span>
-    
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>362<span class="pc-show">字数</span></span>
-    </span>
-  </div>
-</header>
-    <div class="post-body">
-      <p>算是总结，也算是开始</p>
-
-      <!--noindex-->
-      
-      <div class="post-button text-center">
-        <a class="btn" href="https://tx874300.coding.me/post/4pTwUwOuE" rel="contents">
-          阅读全文 »
-        </a>
-      </div>
-      <!--/noindex-->
-      
-    </div>
-    <footer class="post-footer">
-      <div class="post-eof"></div>
-    </footer>
-  </article>
-
-  <article class="post-list-box post">
-    <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://tx874300.coding.me/post/4ZU3lWF_y">
-      12.24
-    </a>
-  </h1>
-  <div class="post-meta">
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2019-12-24</span>
-    </span>
-    
-      <span class="meta-item">
-        <span class="post-meta-divider pc-show">|</span>
-        <i class="fa fa-folder-o"></i>
-        <span class="pc-show">分类于</span>
-        
-          
-            <a href="https://tx874300.coding.me/tag/0PV4Phj8M">
-              <span>DailyLife</span>
-            </a>
-          
-        
-      </span>
-    
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>67<span class="pc-show">字数</span></span>
-    </span>
-  </div>
-</header>
-    <div class="post-body">
-      
-      <!--noindex-->
-      
-      <div class="post-button text-center">
-        <a class="btn" href="https://tx874300.coding.me/post/4ZU3lWF_y" rel="contents">
-          阅读全文 »
-        </a>
-      </div>
-      <!--/noindex-->
-      
-    </div>
-    <footer class="post-footer">
-      <div class="post-eof"></div>
-    </footer>
-  </article>
-
-  <article class="post-list-box post">
-    <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://tx874300.coding.me/post/QE0jOzeuw">
-      书
-    </a>
-  </h1>
-  <div class="post-meta">
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2019-12-23</span>
-    </span>
-    
-      <span class="meta-item">
-        <span class="post-meta-divider pc-show">|</span>
-        <i class="fa fa-folder-o"></i>
-        <span class="pc-show">分类于</span>
-        
-          
-            <a href="https://tx874300.coding.me/tag/cyFQq3y9a">
-              <span>热爱生活</span>
-            </a>
-          
-        
-      </span>
-    
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-clock-o"></i>
-      <span>9分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>2623<span class="pc-show">字数</span></span>
-    </span>
-  </div>
-</header>
-    <div class="post-body">
-      <p>关于我看过的书</p>
-
-      <!--noindex-->
-      
-      <div class="post-button text-center">
-        <a class="btn" href="https://tx874300.coding.me/post/QE0jOzeuw" rel="contents">
-          阅读全文 »
-        </a>
-      </div>
-      <!--/noindex-->
-      
-    </div>
-    <footer class="post-footer">
-      <div class="post-eof"></div>
-    </footer>
-  </article>
-
-  <article class="post-list-box post">
-    <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://tx874300.coding.me/post/cJjthn-GQ">
-      12.23
-    </a>
-  </h1>
-  <div class="post-meta">
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2019-12-23</span>
-    </span>
-    
-      <span class="meta-item">
-        <span class="post-meta-divider pc-show">|</span>
-        <i class="fa fa-folder-o"></i>
-        <span class="pc-show">分类于</span>
-        
-          
-            <a href="https://tx874300.coding.me/tag/0PV4Phj8M">
-              <span>DailyLife</span>
-            </a>
-          
-        
-      </span>
-    
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>206<span class="pc-show">字数</span></span>
-    </span>
-  </div>
-</header>
-    <div class="post-body">
-      <p>something just like this(megamix)/书的整理</p>
-
-      <!--noindex-->
-      
-      <div class="post-button text-center">
-        <a class="btn" href="https://tx874300.coding.me/post/cJjthn-GQ" rel="contents">
-          阅读全文 »
-        </a>
-      </div>
-      <!--/noindex-->
-      
-    </div>
-    <footer class="post-footer">
-      <div class="post-eof"></div>
-    </footer>
-  </article>
-
-  <article class="post-list-box post">
-    <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://tx874300.coding.me/post/PSOyIrnac">
-      冬至和饺子
-    </a>
-  </h1>
-  <div class="post-meta">
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2019-12-22</span>
-    </span>
-    
-      <span class="meta-item">
-        <span class="post-meta-divider pc-show">|</span>
-        <i class="fa fa-folder-o"></i>
-        <span class="pc-show">分类于</span>
-        
-          
-            <a href="https://tx874300.coding.me/tag/cyFQq3y9a">
-              <span>热爱生活</span>
-            </a>
-          
-        
-      </span>
-    
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>352<span class="pc-show">字数</span></span>
-    </span>
-  </div>
-</header>
-    <div class="post-body">
-      <p>  饺子与我无关.</p>
-
-      <!--noindex-->
-      
-      <div class="post-button text-center">
-        <a class="btn" href="https://tx874300.coding.me/post/PSOyIrnac" rel="contents">
-          阅读全文 »
-        </a>
-      </div>
-      <!--/noindex-->
-      
-    </div>
-    <footer class="post-footer">
-      <div class="post-eof"></div>
-    </footer>
-  </article>
-
-  <article class="post-list-box post">
-    <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://tx874300.coding.me/post/zoTphswBw">
-      12.22
-    </a>
-  </h1>
-  <div class="post-meta">
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2019-12-22</span>
-    </span>
-    
-      <span class="meta-item">
-        <span class="post-meta-divider pc-show">|</span>
-        <i class="fa fa-folder-o"></i>
-        <span class="pc-show">分类于</span>
-        
-          
-            <a href="https://tx874300.coding.me/tag/0PV4Phj8M">
-              <span>DailyLife</span>
-            </a>
-          
-        
-      </span>
-    
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>150<span class="pc-show">字数</span></span>
-    </span>
-  </div>
-</header>
-    <div class="post-body">
-      <p>冬至 ilem</p>
-
-      <!--noindex-->
-      
-      <div class="post-button text-center">
-        <a class="btn" href="https://tx874300.coding.me/post/zoTphswBw" rel="contents">
-          阅读全文 »
-        </a>
-      </div>
-      <!--/noindex-->
-      
-    </div>
-    <footer class="post-footer">
-      <div class="post-eof"></div>
-    </footer>
-  </article>
-
-  <article class="post-list-box post">
-    <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://tx874300.coding.me/post/OTh4ujsda">
-      12.21
-    </a>
-  </h1>
-  <div class="post-meta">
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2019-12-21</span>
-    </span>
-    
-      <span class="meta-item">
-        <span class="post-meta-divider pc-show">|</span>
-        <i class="fa fa-folder-o"></i>
-        <span class="pc-show">分类于</span>
-        
-          
-            <a href="https://tx874300.coding.me/tag/0PV4Phj8M">
-              <span>DailyLife</span>
-            </a>
-          
-        
-      </span>
-    
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>517<span class="pc-show">字数</span></span>
-    </span>
-  </div>
-</header>
-    <div class="post-body">
-      <p>In the End   markdown</p>
-
-      <!--noindex-->
-      
-      <div class="post-button text-center">
-        <a class="btn" href="https://tx874300.coding.me/post/OTh4ujsda" rel="contents">
-          阅读全文 »
-        </a>
-      </div>
-      <!--/noindex-->
-      
-    </div>
-    <footer class="post-footer">
-      <div class="post-eof"></div>
-    </footer>
-  </article>
-
-  <article class="post-list-box post">
-    <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://tx874300.coding.me/post/uXpi1CJWN">
-      12.20
-    </a>
-  </h1>
-  <div class="post-meta">
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2019-12-20</span>
-    </span>
-    
-      <span class="meta-item">
-        <span class="post-meta-divider pc-show">|</span>
-        <i class="fa fa-folder-o"></i>
-        <span class="pc-show">分类于</span>
-        
-          
-            <a href="https://tx874300.coding.me/tag/0PV4Phj8M">
-              <span>DailyLife</span>
-            </a>
-          
-        
-      </span>
-    
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-clock-o"></i>
-      <span>3分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>835<span class="pc-show">字数</span></span>
-    </span>
-  </div>
-</header>
-    <div class="post-body">
-      <p>daily 悸动烧仙草 花粥 MAD·AMV</p>
-
-      <!--noindex-->
-      
-      <div class="post-button text-center">
-        <a class="btn" href="https://tx874300.coding.me/post/uXpi1CJWN" rel="contents">
-          阅读全文 »
-        </a>
-      </div>
-      <!--/noindex-->
-      
-    </div>
-    <footer class="post-footer">
-      <div class="post-eof"></div>
-    </footer>
-  </article>
-  
-              
-              
-<div class="page">
-  <ul class="pagination-ul">
-    
-    
-      
-        <li class="pagination-li pagination-active">
-            <a href="/page/../">
-              1
-            </a>
-        </li>
-      
-        <li class="pagination-li ">
-            <a href="/page/2">
-              2
-            </a>
-        </li>
-      
-    
-    
-      <li class="pagination-dir">
-        <a href="/page/2">
-          <i class="fa fa-angle-right"></i>
-        </a>
-      </li>
-    
-  </ul>
-</div>
-            </section>
-          </div>
-        </div>
-      </div>
-      <div class="footer-box">
-  <footer class="footer">
-    <div class="copyright">
-      © 2019-2020 <i class="fa fa-heart"></i> HsxyHao
-    </div>
-    <div class="poweredby">
-      <div class="power-left">Power By<a href="https://github.com/hsxyhao"> HsxyHao</a></div>
-      <div>Copy<a href="https://github.com/iissnan/hexo-theme-next"> Hexo Next Theme</a></div>
-    </div>
-  </footer>
-  <div class="back-to-top" id="back_to_top">
-    <i class="fa fa-arrow-up"></i>
-    <span class="scrollpercent">
-      <span id="back_to_top_text">100</span>%
-    </span>
-  </div>
-</div>
-
+    <div class="header">
+      <div class="logo_title">
+		  
+        <div class="title animated fadeInDown"><img id="img1" alt="logo" style="display:inline-block;" src="https://tx874300.coding.me//images/avatar.png"/>
 <script>
-
-  let body = document.body;
-
-  let back2Top = document.querySelector('#back_to_top'),
-  back2TopText = document.querySelector('#back_to_top_text');
-
-  function scrollAnimation(currentY, targetY) {
-   
-    let needScrollTop = targetY - currentY
-    let _currentY = currentY
-    setTimeout(() => {
-      const dist = Math.ceil(needScrollTop / 10)
-      _currentY += dist
-      window.scrollTo(_currentY, currentY)
-      if (needScrollTop > 10 || needScrollTop < -10) {
-        scrollAnimation(_currentY, targetY)
-      } else {
-        window.scrollTo(_currentY, targetY)
-      }
-    }, 1)
-  }
-
-  back2Top.addEventListener("click", function(e) {
-    scrollAnimation(body.scrollTop, 0);
-    e.stopPropagation();
-    return false;
-  });
-  
-  window.addEventListener('scroll', function(e) {
-    let percent = body.scrollTop / (body.scrollHeight - body.clientHeight) * 100;
-    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
-      back2Top.classList.add('back-top-active');
-    }
-    if (percent == 0) {
-      back2Top.classList.remove('back-top-active');
-    }
-    back2TopText.textContent = Math.floor(percent);
-  });
-
-  // 动态调整站点概览高度
-  let sideBar = document.querySelector('.sidebar');
-  let navUl = document.querySelector('#nav_ul');
-  sideBar.style = 'margin-top:' + (navUl.children.length * 42 + 162) + 'px; opacity: 1;';
-  // 代码高亮
-  hljs.initHighlightingOnLoad();
+var r = 0;
+    window.onload = function(){
+        var current = 0;
+        document.getElementById('img1').onclick = function(){
+            current = (current+90)%360;
+            this.style.transform = 'rotate('+current+'deg)';
+        }
+    };
 </script>
+
+          <h1 title="海船Lee" class="weaklink"><a  href="/">海船Lee</a>
+
+          </h1>
+	  
+
+          <div class="navbar weaklink">
+            <div class="normal_nav">
+
+<div class="bitcron_nav_container">
+
+
+  <div class="bitcron_nav">
+    <div class="mixed_site_nav_wrap site_nav_wrap">
+		
+      <ul class="mixed_site_nav site_nav sm sm-base">
+	  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a>
+  </li>
+  
+ 
+ <li>
+
+      </ul>
+	  
+
+      <div class="clear clear_nav_inline_end"></div>
     </div>
-  </body>
-  <script src="/media/js/motion.js"></script>
+
+  </div>
+
+
+
+  <div class="clear clear_nav_end"></div>
+
+</div>
+
+            </div>
+			
+			<div class="hamberger"><i class="fa fa-bars"></i>
+<i class="fa fa-times"></i>
+
+			</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hidden_nav animated fadeInDown">
+
+<div class="bitcron_nav_container">
+
+
+  <div class="bitcron_nav">
+    <div class="mixed_site_nav_wrap site_nav_wrap">
+      <ul class="mixed_site_nav site_nav sm sm-base">
+	
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a>
+
+  </li>
+
+
+
+
+      </ul>
+
+      <div class="clear clear_nav_inline_end"></div>
+    </div>
+
+  </div>
+
+
+
+  <div class="clear clear_nav_end"></div>
+
+</div>
+
+      </div>
+
+    </div>
+
+
+    <div class="main" id="pjax-container">
+      <div class="main-inner">
+
+<div class="content">
+
+
+
+
+
+
+  <div class="post_list" >
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://tx874300.coding.me/post/rJ3F-SQOd" >关于知乎问题‘如何看待同行质疑女护士施救不专业’的I&amp;C</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
+  <a class="pure-button" href="https://tx874300.coding.me/post/rJ3F-SQOd">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2020-01-07
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://tx874300.coding.me/tag/Y1zouErXK" class="tag">
+				I&amp;C
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		876
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		3 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://tx874300.coding.me/post/vUz3e1d8M" >20.1.4</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
+  <a class="pure-button" href="https://tx874300.coding.me/post/vUz3e1d8M">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2020-01-04
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://tx874300.coding.me/tag/0PV4Phj8M" class="tag">
+				DailyLife
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		313
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		2 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://tx874300.coding.me/post/4pTwUwOuE" >12.31</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p><p>算是总结，也算是开始</p>
+</p></div></div>
+  <a class="pure-button" href="https://tx874300.coding.me/post/4pTwUwOuE">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2019-12-31
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://tx874300.coding.me/tag/0PV4Phj8M" class="tag">
+				DailyLife
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		362
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		2 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://tx874300.coding.me/post/4ZU3lWF_y" >12.24</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
+  <a class="pure-button" href="https://tx874300.coding.me/post/4ZU3lWF_y">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2019-12-24
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://tx874300.coding.me/tag/0PV4Phj8M" class="tag">
+				DailyLife
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		67
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		1 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://tx874300.coding.me/post/QE0jOzeuw" >书</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p><p>关于我看过的书</p>
+</p></div></div>
+  <a class="pure-button" href="https://tx874300.coding.me/post/QE0jOzeuw">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2019-12-23
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://tx874300.coding.me/tag/cyFQq3y9a" class="tag">
+				热爱生活
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		2623
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		9 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://tx874300.coding.me/post/cJjthn-GQ" >12.23</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p><p>something just like this(megamix)/书的整理</p>
+</p></div></div>
+  <a class="pure-button" href="https://tx874300.coding.me/post/cJjthn-GQ">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2019-12-23
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://tx874300.coding.me/tag/0PV4Phj8M" class="tag">
+				DailyLife
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		206
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		1 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://tx874300.coding.me/post/PSOyIrnac" >冬至和饺子</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p><p>  饺子与我无关.</p>
+</p></div></div>
+  <a class="pure-button" href="https://tx874300.coding.me/post/PSOyIrnac">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2019-12-22
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://tx874300.coding.me/tag/cyFQq3y9a" class="tag">
+				热爱生活
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		352
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		2 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://tx874300.coding.me/post/zoTphswBw" >12.22</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p><p>冬至 ilem</p>
+</p></div></div>
+  <a class="pure-button" href="https://tx874300.coding.me/post/zoTphswBw">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2019-12-22
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://tx874300.coding.me/tag/0PV4Phj8M" class="tag">
+				DailyLife
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		150
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		1 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://tx874300.coding.me/post/OTh4ujsda" >12.21</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p><p>In the End   markdown</p>
+</p></div></div>
+  <a class="pure-button" href="https://tx874300.coding.me/post/OTh4ujsda">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2019-12-21
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://tx874300.coding.me/tag/0PV4Phj8M" class="tag">
+				DailyLife
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		517
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		2 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://tx874300.coding.me/post/uXpi1CJWN" >12.20</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p><p>daily 悸动烧仙草 花粥 MAD·AMV</p>
+</p></div></div>
+  <a class="pure-button" href="https://tx874300.coding.me/post/uXpi1CJWN">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2019-12-20
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://tx874300.coding.me/tag/0PV4Phj8M" class="tag">
+				DailyLife
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		835
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		3 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+	
+
+<div class="paginator pager pagination" >
+	
+  <div class="paginator_container pagination_container">
+	  
+	    								
+										
+	  
+	  <a href="https://tx874300.coding.me/page/2"  class="btn next older-posts older_posts"> Older Posts </a>
+
+
+
+    <div style="clear:both;height:0;"></div>
+
+
+  </div>
+
+</div>
+</div>
+  </div>
+</div>
+
+    </div>
+   <div class="footer">
+<div class="site_footer_wrap"><div class="site_footer">
+
+      <div class="mysocials"><div class="my_socials">
+		   
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+</div>
+      </div>
+
+      <div class="copyright" id="copyright">
+	  <script>
+		var date=new Date;
+		var year=date.getFullYear(); 
+		document.write("Copyright © "+year+" " + "海船Lee. ");
+		</script>
+		Powered by Gridea.
+		<br>
+		本站已稳定运行了
+		<strong><script type="text/javascript">
+		var urodz= new Date("10/28/2018");
+		var now = new Date();
+		var ile = now.getTime() - urodz.getTime();
+		var dni = Math.floor(ile / (1000 * 60 * 60 * 24));
+		document.write(+dni)
+		</script>
+		</strong>天
+		<br>
+		本站总访问量为 <strong><span id="busuanzi_value_site_uv"></span></strong> 次
+	  
+      </div>
+	  <img src="https://tx874300.coding.me//media/images/font.svg">
+
+    </div>
+
+<script type="text/javascript" src="https://tx874300.coding.me//media/scripts/love.js"></script>
+<script type="text/javascript" src="https://tx874300.coding.me//media/scripts/darkmode.js"></script>
+<script>
+new Darkmode({label: '🌓',backgroundColor: '#f7f7f7',time: '0.5s'}).showWidget();
+console.clear();
+console.log("\n %c \u26a1Theme: Bitcron-pro Author's Blog:https://blog.blinkstar.cn  Writen By Serence  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;", );
+</script>
+<script>
+hljs.initHighlightingOnLoad();
+</script>
+
+
+</body>
+
 </html>
