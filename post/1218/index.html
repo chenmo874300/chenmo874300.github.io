@@ -1,358 +1,338 @@
-<!DOCTYPE html>
 <html>
-  <head lang="zh">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
-<meta content="yes" name="apple-mobile-web-app-capable"/>
-<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
-<meta content="telephone=no" name="format-detection"/>
-<meta name="renderer" content="webkit">
-<meta name="description" content="心之所向,一苇以航">
-<meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <head>
+      <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>海船Lee</title>
+<link rel="shortcut icon" href="https://tx874300.coding.me//favicon.ico?v=1578594163587">
+<link rel="stylesheet" href="https://tx874300.coding.me//styles/main.css">
+<meta name="description" content="心之所向,一苇以航" />
 
+<link rel="stylesheet" href="/media/fonts/font-awesome.css">
+<link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
-<title>12.18 | 海船Lee</title>
-<link href="https://tx874300.coding.me//styles/main.css" type="text/css" rel="stylesheet"/>
-<link rel="stylesheet" href="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.css"/>
-<script src="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.js"></script>
-<script src="//cdn.bootcss.com/KaTeX/0.10.2/contrib/auto-render.min.js"></script>
-<script type="text/javascript" src="https://tx874300.coding.me//media/scripts/jquery.js"></script>
-<script type="text/javascript" src="https://tx874300.coding.me//media/scripts/jquery.pjax.min.js"></script>
-<script type="text/javascript" src="https://tx874300.coding.me//media/scripts/basic.js"></script>
-<script type="text/javascript" src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
-<script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
-<script async type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script type="text/javascript" src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery.min.js"></script>
-<script src="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
   </head>
   <body>
-     <div class="header">
-      <div class="logo_title">
-		  
-        <div class="title animated fadeInDown"><img id="img1" alt="logo" style="display:inline-block;" src="https://tx874300.coding.me//images/avatar.png"/>
-<script>
-var r = 0;
-    window.onload = function(){
-        var current = 0;
-        document.getElementById('img1').onclick = function(){
-            current = (current+90)%360;
-            this.style.transform = 'rotate('+current+'deg)';
-        }
-    };
-</script>
-
-          <h1 title="海船Lee" class="weaklink"><a  href="/">海船Lee</a>
-
-          </h1>
-	  
-
-          <div class="navbar weaklink">
-            <div class="normal_nav">
-
-<div class="bitcron_nav_container">
-
-
-  <div class="bitcron_nav">
-    <div class="mixed_site_nav_wrap site_nav_wrap">
-		
-      <ul class="mixed_site_nav site_nav sm sm-base">
-	  
- 
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
-  </li>
-  
- 
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
-  </li>
-  
- 
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
-  </li>
-  
- 
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a>
-  </li>
-  
- 
- <li>
-
-      </ul>
-	  
-
-      <div class="clear clear_nav_inline_end"></div>
-    </div>
-
-  </div>
-
-
-
-  <div class="clear clear_nav_end"></div>
-
-</div>
-
-            </div>
-			
-			<div class="hamberger"><i class="fa fa-bars"></i>
-<i class="fa fa-times"></i>
-
-			</div>
-
-          </div>
-
+    <div class="head-top-line"></div>
+    <div class="header-box">
+      
+<header class="header">
+  <div class="blog-header" id="header">
+    <div class="site-meta">
+      <div class="nav-toggle" id="nav_toggle">
+        <div class="toggle-box">
+          <div class="line line-top"></div>
+          <div class="line line-center"></div>
+          <div class="line line-bottom"></div>
         </div>
-
       </div>
-
-      <div class="hidden_nav animated fadeInDown">
-
-<div class="bitcron_nav_container">
-
-
-  <div class="bitcron_nav">
-    <div class="mixed_site_nav_wrap site_nav_wrap">
-      <ul class="mixed_site_nav site_nav sm sm-base">
-	
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
-
-  </li>
-
-
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
-
-  </li>
-
-
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
-
-  </li>
-
-
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a>
-
-  </li>
-
-
-
-
+      <div class="site-title">
+        <a href="/" class="brand">
+          <span>海船Lee</span>
+        </a>
+      </div>
+      <p class="subtitle">Quick notes</p>
+    </div>
+    <nav class="site-nav" id="site_nav">
+      <ul id="nav_ul">
+        
+          <li class="nav-item ">
+            
+              <a href="/">
+                <i class="fa fa-home"></i> 首页
+              </a>
+            
+          </li>
+        
+          <li class="nav-item ">
+            
+              <a href="/archives">
+                <i class="fa fa-archive"></i> 归档
+              </a>
+            
+          </li>
+        
+          <li class="nav-item ">
+            
+              <a href="/tags">
+                <i class="fa fa-tags"></i> 标签
+              </a>
+            
+          </li>
+        
+          <li class="nav-item ">
+            
+              <a href="/post/about">
+                <i class="fa fa-info-circle"></i> 关于
+              </a>
+            
+          </li>
+        
+        <li class="nav-item">
+          <a>
+            <i class="fa fa-search"></i> 搜索
+          </a>
+        </li>
       </ul>
-
-      <div class="clear clear_nav_inline_end"></div>
-    </div>
-
+    </nav>
   </div>
+</header>
+<script type="text/javascript"> 
+ 
+  let showNav = true;
 
+  let navToggle = document.querySelector('#nav_toggle'),
+  siteNav = document.querySelector('#site_nav');
+  
+  function navClick() {
+    let sideBar = document.querySelector('.sidebar');
+    let navUl = document.querySelector('#nav_ul');
+    navToggle.classList.toggle('nav-toggle-active');
+    siteNav.classList.toggle('nav-menu-active');
+    if (siteNav.classList.contains('nav-menu-active')) {
+      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
+    } else {
+      siteNav.style = "";
+    }
+  }
 
-
-  <div class="clear clear_nav_end"></div>
-
-</div>
-
-      </div>
-
-    </div>
-
-
-    <div class="main" id="pjax-container">
-      <div class="main-inner">
-<div class="content">
-<style>.toc{overflow-y:auto}.toc>.toc-list{overflow:hidden;position:relative}.toc>.toc-list li{list-style:none}.toc-list{margin:0;padding-left:10px}a.toc-link{color:currentColor;height:100%}.is-collapsible{max-height:1000px;overflow:hidden;transition:all 300ms ease-in-out}.is-collapsed{max-height:0}.is-position-fixed{position:fixed !important;top:0}.is-active-link{font-weight:700}.toc-link::before{background-color:#EEE;content:' ';display:inline-block;height:inherit;left:0;margin-top:-1px;position:absolute;width:2px}.is-active-link::before{background-color:#54BC4B}</style>
-  <div class="post_page" >
-<div class="post">
-  <div class="post_title sm_margin">
-    <h2><a>12.18</a>
-    </h2>
-  </div>
-<script>
-function lan(){
-	if (document.getElementById("lan").innerText == "繁"){
-		var s=document.getElementById("tongwenlet_cn");
-		if(s != null){
-		document.body.removeChild(s);
-		}
-		var s = document.createElement("script");
-		s.language = "javascript";
-		s.type = "text/javascript";
-		s.src = "https://git.oschina.net/runningcheese/JiathisQR.js/raw/master/bookmarklet_tw.js";
-		s.id = "tongwenlet_cn";
-		document.body.appendChild(s);
-		document.getElementById("lan").innerHTML = "简"
-	}
-	else if(document.getElementById("lan").innerText == "簡"){
-		var s=document.getElementById("tongwenlet_cn");
-		if(s != null){
-		document.body.removeChild(s);
-		}
-		var s = document.createElement("script");
-		s.language = "javascript";
-		s.type = "text/javascript";
-		s.src = "https://git.oschina.net/runningcheese/JiathisQR.js/raw/master/bookmarklet_cn.js";
-		s.id = "tongwenlet_cn";
-		document.body.appendChild(s);
-		document.getElementById("lan").innerHTML = "繁"
-		}
-}
-
-function change(){	
-    var rand = Math.random()*1+1;
-    var num = window.getComputedStyle(document.getElementsByName("show")[0],undefined).fontSize;
-	num = num.slice(0,-2); 
-    document.getElementById("show").style.fontSize = num - rand +'px';
-}
+  navToggle.addEventListener('click',navClick);  
 </script>
-  <div class="post_details">
-    <div class="info"><i class="fa fa-calendar"></i>
-<span class="date_info">2019-12-18</span>
-<i class="fa fa-eye"></i>
-<span class="date_info"><span id="busuanzi_value_page_pv"></span> Views</span>
-<i class="fa fa-bookmark-o"></i>
-<span class="tags_info weaklink">
-	
-	<a href="https://tx874300.coding.me/tag/0PV4Phj8M" class="tag">DailyLife</a>
-
-</span>
-<i class="fa fa-anchor"></i>
-<span style="margin-right:15px">
-110字
-</span>
-<i class="fa fa-clock-o"></i>
-<span style="margin-right:15px">
-1 min read
-</span>
-<span style="margin-right:15px">
-<i class="fa fa-share"></i>
-<a title="QR code" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://tx874300.coding.me/post/1218"><i class="fa fa-qrcode"></i></a>
-<a title="qq share" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://tx874300.coding.me/post/1218&sharesource=qzone&title=12.18&pics=https://blog.blinkstar.cn/images/avatar.png&summary="><i class="fa fa-qq"></i></a>
-<a title="weibo share" target="_blank" href="https://service.weibo.com/share/share.php?url=https://tx874300.coding.me/post/1218&sharesource=weibo&title=12.18 + " - " + &pic="https://blog.blinkstar.cn/images/avatar.png"><i class="fa fa-weibo"></i></a>
-</span>
-<span style="margin-right:15px">
-<a id="daxiao" href="javascript:void(0);" onclick="change();" title="调整字体大小"><i class="fa fa-font"></i></a>
-</span>
-<span style="margin-right:15px">
-<a id="lan" href="javascript:void(0);" onclick="lan();" title="调整简繁体">繁</a>
-</span>
-</div>
+    </div>
+    <div class="main-continer">
+      <div class="section-layout">
+        <div class="section-layout-wrapper">
+          
+<div class="sidebar">
+    <div class="sidebar-wrapper" id="sidebar">
+      
+      <div class="sidebar-body" id="sidebar_body">
+        
+          <div class="sidebar-wrapper">
+  <div class="sidebar-item">
+    <img class="site-author-image" src="https://tx874300.coding.me//images/avatar.png"/>
+    <p class="site-author-name">海船Lee</p>
+    <p class="site-description">心之所向,一苇以航</p>
   </div>
-
-    <div class="post_content markdown">
-	
-	<img id="mememe" alt="featureimg" src="//source.unsplash.com/800x400/?arts,weather">
-	
-    <div name="show" id="show">
-	<p class="md_block"><span class="md_line md_line_start md_line_end"><p>  发现了Gridea，并准备试试。<br>
-  本来打算写一个日程管理与番茄钟的桌面应用，兜兜转转了好久决定用electron开发。因为比较喜欢B/S模式，也有更多CSS样式选择（对，就是对界面要求大于程序本身hhh）然后就在掘金上发现了图床PicGo的作者的文章，然后又因此看见了Gridea。颇为感慨，以上。</p>
-</span></p></div><div id = "warn"></div>
-	<br>
-	<hr>
-<div style="color: #ccc;font-size:14px;"><i class="fa fa-user"></i>本文由<a rel="license" href="/">海船Lee</a>创作</div>	
-<div style="color: #ccc;font-size:14px;"><i class="fa fa-cc"></i>该文章采用<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。转载请注明出处！</div>
-<div style="color: #ccc;font-size:14px;"><i class="fa fa-clock-o"></i>发布时间为：2019-12-18</div>    
-<!-- <p class="md_block">
-<div class="reward"><div class="reward-button">赏 <span class="reward-code"> <span class="alipay-code"> <img class="alipay-img" alt = "support" src="https://tx874300.coding.me//media/images/alipay.png"><b>支付宝扫码打赏</b> </span> <span class="wechat-code"> <img alt ="support" class="wechat-img" src="https://tx874300.coding.me//media/images/wechat.png"><b>微信打赏</b> </span> </span></div></div>
-<div style="text-align:center;color: #ccc;font-size:14px;">如果觉得这篇文章对您有帮助，可以请作者喝一杯饮料哦🥤</div>    
-</p>  -->
+  <div class="sidebar-item side-item-stat">
+    <div class="sidebar-item-box">
+      <a href="/archives/">
+        
+        <span class="site-item-stat-count">14</span>
+        <span class="site-item-stat-name">文章</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="">
+        <span class="site-item-stat-count">5</span>
+        <span class="site-item-stat-name">分类</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="/tags/">
+        <span class="site-item-stat-count">5</span>
+        <span class="site-item-stat-name">标签</span>
+      </a>
+    </div>
+  </div>
+  <div class="sidebar-item">
+    <span class="site-item-rss">
+        <i class="fa fa-rss"></i>
+        <a href="https://tx874300.coding.me//atom.xml" target="_blank">RSS</a>
+    </span>
+  </div>
+  <div class="sidebar-item sidebar-item-social">
+    <div class="social-item">
+      <a href="">
+        <i class="fa fa-github"></i> GitHub
+      </a>
+      <a href="">
+        <i class="fa fa-twitter"></i> Twitter
+      </a>
+    </div>
+    <div class="social-item">
+      <a href="">
+        <i class="fa fa-globe"></i> 豆瓣
+      </a>
+      <a href="">
+        <i class="fa fa-globe"></i> 知乎
+      </a>
+    </div>
+  </div>
 </div>
+        
+      </div>
+    </div>
 </div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
 
-<style type="text/css">
-#mememe {
-	border:3px;
-	border-radius:5px;
-    background-repeat: no-repeat;
-    height: 100%;
-	width: 100%;
-	display: inline-block;
-	border-radius:5px; 
-}
-</style>
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
 
-<div style="width:100%;overflow:hidden">
+  tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
 
+  metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
 
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
 
-          <div style="float:left;text-align:left;color:#ccc;font-size:18px;width:50%;">
-            上一篇
-            <a href="https://tx874300.coding.me/post/1219">
-              <p class="post-title">
-                <b>12.19</b>
-              </p>
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+
+  }
+
+  postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+  let hasFix = false;
+  window.addEventListener('scroll', function(e) {
+    if (document.body.scrollTop >= limitTop) {
+      if (!hasFix) {
+        sidebar.classList.add('sidebar-fixed');
+        hasFix = true;
+      }
+    } else {
+      if (hasFix) {
+        sidebar.classList.remove('sidebar-fixed');
+        hasFix = false;
+      }
+    }
+  });
+</script>
+          <div class="section-box">
+            <div class="section post">
+              <div class="article-box">
+    <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://tx874300.coding.me/post/1218">
+      12.18
+    </a>
+  </h1>
+  <div class="post-meta">
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2019-12-18</span>
+    </span>
+    
+      <span class="meta-item">
+        <span class="post-meta-divider pc-show">|</span>
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://tx874300.coding.me/tag/0PV4Phj8M">
+              <span>DailyLife</span>
             </a>
-          </div>
-
+          
+        
+      </span>
+    
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-clock-o"></i>
+      <span>1分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>110<span class="pc-show">字数</span></span>
+    </span>
+  </div>
+</header>
 </div>
+              <div class="post-body next-md-body" id="post_body">
+                <p>  发现了Gridea，并准备试试。<br>
+  本来打算写一个日程管理与番茄钟的桌面应用，兜兜转转了好久决定用electron开发。因为比较喜欢B/S模式，也有更多CSS样式选择（对，就是对界面要求大于程序本身hhh）然后就在掘金上发现了图床PicGo的作者的文章，然后又因此看见了Gridea。颇为感慨，以上。</p>
 
-<div class="doc_comments">
-
-</div>
-<script>
-var link="";$("img").each((i,o)=>{var o=$(o);if(o.attr("src").indexOf("sinaimg")>0||o.attr("src").indexOf("qpic")>0||o.attr("src").indexOf("baidu")>0||o.attr("src").indexOf("sinaimg")>0){o.attr("referrerpolicy","no-referrer");link=o.attr("src");o.attr("src",link);}});
-imgList = document.querySelectorAll('img')
-imgList.forEach(img => {
-  if (img.alt !== "logo" && img.alt !== "featureimg"){
-  let div1 = document.createElement('div')
-  let div = document.createElement('div')
-  div.className='back';
-  div.setAttribute("data-src",img.src)
-  var figuration = document.createElement("figcaption")
-  figuration.innerHTML = '<a href="' + img.src + '">' + img.alt + '</a>'
-  img.replaceWith(div1)
-  div1.appendChild(div)
-  div.appendChild(img)
-  div1.appendChild(figuration)}
-})
-$('img').on('error',function(){$(this).prop('src','https://tx874300.coding.me//media/images/broken.jpg')});$("a").attr("rel","external nofollow");$("a[rel='external nofollow']").attr("target","_blank");$("a[href^='#']").removeAttr("target");$("a.ex").removeAttr("rel");$("a.ex").removeAttr("target");
-content="<div class='warn'>本文最后更新于2019-12-18，已超过 1 年没有更新，涉及的内容可能已经失效！</div>";var date1="2019-12-18 21:50:10";date1=date1.replace("-","/");var date2=new Date();var date3=date2.getTime()-new Date(date1).getTime();var days=Math.floor(date3/(24*3600*1000));if(days>=365){document.getElementById("warn").innerHTML=content};
-$('#pjax-container').lightGallery({
-    selector: '.back'
-});
-tocbot.init({
-	tocSelector: '.toc',
-	contentSelector: '.main-inner',
-	headingSelector: 'h1, h2, h3, h4, h5',
-	positionFixedSelector: ".toc",
-	scrollSmooth: true,
-	fixedSidebarOffset: 'auto',
-    scrollSmoothOffset: -80,
-    headingsOffset: -500
-});
-</script>
+              </div>
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      海船Lee
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://tx874300.coding.me/post/1218" title="12.18">12.18</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://tx874300.coding.me/tag/0PV4Phj8M"># DailyLife</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" href="https://tx874300.coding.me/post/1219">12.19</a class="nav-pc-next">
+        <a class="nav-mobile-prev" href="https://tx874300.coding.me/post/1219">上一篇</a>
+      
+    </div>
+    <div class="nav-next">
+      
+    </div>
   </div>
 </div>
-
-
+              
+            </div>
+          </div>
+        </div>
       </div>
-<div class="toc-container">
-
-</div>
+      <div class="footer-box">
+  <footer class="footer">
+    <div class="copyright">
+      © 2019-2020 <i class="fa fa-heart"></i> 海船Lee
     </div>
-	
-   <div class="footer">
-<div class="site_footer_wrap"><div class="site_footer">
-
-      <div class="mysocials"><div class="my_socials">
-		   
-			   
-    
-			   
-    
-			   
-    
-			   
-    
-			   
-    
-			   
-    
-</div>
-      </div>
-
-      <div class="copyright" id="copyright">
-	  <script>
-		var date=new Date;
-		var year=date.getFullYear(); 
-		document.write("Copyright © "+year+" " + "海船Lee. ");
-		</script>
-		Powered by Gridea.
-		<br>
 		本站已稳定运行了
 		<strong><script type="text/javascript">
 		var urodz= new Date("12/18/2019");
@@ -363,25 +343,67 @@ tocbot.init({
 		</script>
 		</strong>天
 		<br>
-		本站总访问量为 <strong><span id="busuanzi_value_site_uv"></span></strong> 次
-	  
-      </div>
-	  <img src="https://tx874300.coding.me//media/images/font.svg">
+    <!-- <div class="poweredby">
+      <div class="power-left">Power By<a href="https://github.com/hsxyhao"> HsxyHao</a></div>
+      <div>Copy<a href="https://github.com/iissnan/hexo-theme-next"> Hexo Next Theme</a></div>
+    </div> -->
+  </footer>
+  <div class="back-to-top" id="back_to_top">
+    <i class="fa fa-arrow-up"></i>
+    <span class="scrollpercent">
+      <span id="back_to_top_text">100</span>%
+    </span>
+  </div>
+</div>
 
+<script>
+
+  let body = document.body;
+
+  let back2Top = document.querySelector('#back_to_top'),
+  back2TopText = document.querySelector('#back_to_top_text');
+
+  function scrollAnimation(currentY, targetY) {
+   
+    let needScrollTop = targetY - currentY
+    let _currentY = currentY
+    setTimeout(() => {
+      const dist = Math.ceil(needScrollTop / 10)
+      _currentY += dist
+      window.scrollTo(_currentY, currentY)
+      if (needScrollTop > 10 || needScrollTop < -10) {
+        scrollAnimation(_currentY, targetY)
+      } else {
+        window.scrollTo(_currentY, targetY)
+      }
+    }, 1)
+  }
+
+  back2Top.addEventListener("click", function(e) {
+    scrollAnimation(body.scrollTop, 0);
+    e.stopPropagation();
+    return false;
+  });
+  
+  window.addEventListener('scroll', function(e) {
+    let percent = body.scrollTop / (body.scrollHeight - body.clientHeight) * 100;
+    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
+      back2Top.classList.add('back-top-active');
+    }
+    if (percent == 0) {
+      back2Top.classList.remove('back-top-active');
+    }
+    back2TopText.textContent = Math.floor(percent);
+  });
+
+  // 动态调整站点概览高度
+  let sideBar = document.querySelector('.sidebar');
+  let navUl = document.querySelector('#nav_ul');
+  sideBar.style = 'margin-top:' + (navUl.children.length * 42 + 162) + 'px; opacity: 1;';
+  // 代码高亮
+  hljs.initHighlightingOnLoad();
+</script>
     </div>
-
-<script type="text/javascript" src="https://tx874300.coding.me//media/scripts/love.js"></script>
-<script type="text/javascript" src="https://tx874300.coding.me//media/scripts/darkmode.js"></script>
-<script>
-new Darkmode({label: '🌓',backgroundColor: '#f7f7f7',time: '0.5s'}).showWidget();
-console.clear();
-console.log("\n %c \u26a1Theme: Bitcron-pro Author's Blog:https://blog.blinkstar.cn  Writen By Serence  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;", );
-</script>
-<script>
-hljs.initHighlightingOnLoad();
-</script>
-
-
-</body>
-
+  </body>
+  <script src="/media/js/motion.js"></script>
 </html>
