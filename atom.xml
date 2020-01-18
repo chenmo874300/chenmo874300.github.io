@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chenmo874300.github.io</id>
     <title>海船Lee</title>
-    <updated>2020-01-18T17:09:52.919Z</updated>
+    <updated>2020-01-18T17:47:26.169Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chenmo874300.github.io"/>
     <link rel="self" href="https://chenmo874300.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://chenmo874300.github.io/images/avatar.png</logo>
     <icon>https://chenmo874300.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 海船Lee</rights>
+    <entry>
+        <title type="html"><![CDATA[在简书上同步文章]]></title>
+        <id>https://chenmo874300.github.io/post/119</id>
+        <link href="https://chenmo874300.github.io/post/119">
+        </link>
+        <updated>2020-01-18T17:45:49.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[在VsCode上使用PicGo]]></title>
         <id>https://chenmo874300.github.io/post/zai-vscode-shang-shi-yong-picgo</id>
@@ -87,17 +94,6 @@
         <summary type="html"><![CDATA[<p>something just like this(megamix)/书的整理</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>something just like this(megamix)/书的整理</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[冬至和饺子]]></title>
-        <id>https://chenmo874300.github.io/post/PSOyIrnac</id>
-        <link href="https://chenmo874300.github.io/post/PSOyIrnac">
-        </link>
-        <updated>2019-12-22T10:18:37.000Z</updated>
-        <summary type="html"><![CDATA[<p>  饺子与我无关.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>  饺子与我无关.</p>
 ]]></content>
     </entry>
 </feed>
