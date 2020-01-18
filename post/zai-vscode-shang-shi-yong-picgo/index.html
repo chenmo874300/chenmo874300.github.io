@@ -113,9 +113,17 @@
 <div class="sidebar">
     <div class="sidebar-wrapper" id="sidebar">
       
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
+          </div>
+        </div>
+      
       <div class="sidebar-body" id="sidebar_body">
         
-          <div class="sidebar-wrapper">
+          <div class="post-side-meta" id="post_side_meta">
+            <div class="sidebar-wrapper">
   <div class="sidebar-item">
     <img class="site-author-image" src="https://chenmo874300.github.io/images/avatar.png"/>
     <p class="site-author-name">海船Lee</p>
@@ -167,6 +175,176 @@
     </div>
   </div>
 </div>
+          </div>
+          <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+            <div class="toc-box">
+  <div class="toc-wrapper" id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%9C%A8vscode%E4%B8%8Aextension%E4%B8%AD%E6%90%9C%E7%B4%A2%E5%B9%B6%E5%AE%89%E8%A3%85picgo">在VsCode上Extension中搜索并安装PicGo</a></li>
+<li><a href="#picgo%E8%AE%BE%E7%BD%AE">PicGo设置</a></li>
+<li><a href="#%E5%9C%A8custom-uploadname%E4%B8%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98">在Custom UploadName上遇到的一些问题</a></li>
+<li><a href="#%E4%B8%BA%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%9B%BE%E7%89%87%E5%85%88%E5%91%BD%E5%90%8D">为上传的图片先命名</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1; 
+let active = 'active-show', activeClass = 'active-current';
+let tocWrapper = document.querySelector('#toc_wrapper');
+let tocContent = tocWrapper.children[0];
+
+function addTocNumber(elem, deep) {
+  if (!elem) {
+    return;
+  }
+  let prop = elem.__proto__;
+
+  if (prop === HTMLUListElement.prototype) {
+    for (let i = 0; i < elem.children.length; i++) {
+      addTocNumber(elem.children[i], deep + (i + 1) + '.');
+    }
+  } else if (prop === HTMLLIElement.prototype) {
+    // 保存li元素
+    lList.push(elem);
+    for (let i = 0; i < elem.children.length; i++) {
+      let cur = elem.children[i];
+      if (cur.__proto__ === HTMLAnchorElement.prototype) {
+        cur.text =  deep + ' ' + cur.text;
+      } else if (cur.__proto__ === HTMLUListElement.prototype) {
+        addTocNumber(cur, deep);
+      }
+    }
+  }
+}
+
+
+document.addEventListener('scroll', function(e) {
+  if (lList.length <= 0) {
+    return;
+  }
+  let scrollTop = document.body.scrollTop;
+  let dir;
+
+  if (lastTop - scrollTop > 0) {
+    dir = 'up';
+  } else {
+    dir = 'down';
+  }
+
+  lastTop = scrollTop;
+  if (scrollTop <= 0) {
+    if (lastIndex >= 0 && lastIndex < hList.length) {
+      lList[lastIndex].classList.remove(activeClass);
+    }
+    return;
+  }
+
+  let current = 0, hasFind = false;
+  for (let i = 0; i < hList.length; i++) {
+    if (hList[i].offsetTop > scrollTop) {
+      current = i;
+      hasFind = true;
+      break;
+    }
+  }
+  if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+    current = hList.length - 1;
+  } else {
+    current--;
+  }
+  if (dir === 'down') {
+    if (current > lastIndex) {
+      addActiveClass(current);
+      removeActiveClass(lastIndex) 
+      lastIndex = current;
+      removeParentActiveClass();
+      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
+    }
+  } else {
+    if (current < lastIndex) {
+      addActiveClass(current);
+      removeActiveClass(lastIndex);
+      lastIndex = current;
+      removeParentActiveClass();
+      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
+    }
+  }
+});
+
+function removeParentActiveClass() {
+  let parents = tocContent.querySelectorAll('.'+active)
+  parents.forEach(function(elem) {
+    elem.classList.remove(active);
+  });
+}
+
+function addActiveClass(index) {
+  if (index >= 0 && index < hList.length) {
+    lList[index].classList.add(activeClass);
+  }
+}
+
+function removeActiveClass(index) {
+  if (index >= 0 && index < hList.length) {
+    lList[index].classList.remove(activeClass);
+  }
+}
+
+function addActiveLiElemment(elem, parent) {
+  if (!elem || elem === parent) {
+    return;
+  } else {
+    if (elem.__proto__ === HTMLLIElement.prototype) {
+      elem.classList.add(active);
+    }
+    addActiveLiElemment(elem.parentElement, parent);
+  }
+}
+
+function showToc() {
+  if (tocWrapper) {
+    postBody = document.querySelector('#post_body');
+    for (let i = 0; i < postBody.children.length; i++) {
+      if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+        hList.push(postBody.children[i]);
+      }
+    }
+
+    if (hList.length > 10) {
+      active = 'active-hidden'
+      tocContent.classList.add('closed');
+    } else {
+      tocContent.classList.add('expanded');
+    }
+  }
+}
+addTocNumber(tocContent, '');
+
+window.addEventListener('load', function() {
+  showToc();
+  document.querySelector('#sidebar').style='display: block;';
+  tocWrapper.classList.add('toc-active');
+  setTimeout(function() {
+    if ("createEvent" in document) {
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("scroll", false, true);
+      document.dispatchEvent(evt);
+    }
+    else {
+      document.fireEvent("scroll");
+    }
+  }, 500)
+})
+
+</script>
+          </div>
         
       </div>
     </div>
@@ -248,15 +426,15 @@
               <div class="article-box">
     <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://chenmo874300.github.io/post/cJjthn-GQ">
-      12.23
+    <a class="post-title-link" href="https://chenmo874300.github.io/post/zai-vscode-shang-shi-yong-picgo">
+      在VsCode上使用PicGo
     </a>
   </h1>
   <div class="post-meta">
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2019-12-23</span>
+      <span>2020-01-19</span>
     </span>
     
       <span class="meta-item">
@@ -265,8 +443,8 @@
         <span class="pc-show">分类于</span>
         
           
-            <a href="https://chenmo874300.github.io/tag/0PV4Phj8M">
-              <span>DailyLife</span>
+            <a href="https://chenmo874300.github.io/tag/gmcbE-AHT">
+              <span>IT Fields</span>
             </a>
           
         
@@ -275,23 +453,57 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
+      <span>2分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>206<span class="pc-show">字数</span></span>
+      <span>317<span class="pc-show">字数</span></span>
     </span>
   </div>
 </header>
 </div>
               <div class="post-body next-md-body" id="post_body">
-                <p>something just like this(megamix)/书的整理</p>
-<!-- more -->
-<p>  10:22<br>
-  网易云神奇的日推.前两天在旺仔的年终MAD总结下评论了umbrella作为旺仔2019年的开篇,使用umbrella作为结尾也算有始有终,结果还被大佬翻牌子了.直到刚刚网易云给我推了这首欧美女声串烧......我本来以为some thing just like this(megamix)是一首歌,umbrella是大佬自己接的,现在听着原来是串烧emmmmm.不过网易云的日推还是很神奇的.<br>
-  21:22<br>
-  下午开始整理看过的书，整理了一晚上emmmm发现现在自己的语言组织能力下降了好多。两句话能有一句是别句。我觉得我讲话时讲述混乱与短句以及碎片化语句交流也有关系。</p>
+                <h2 id="在vscode上extension中搜索并安装picgo">在VsCode上Extension中搜索并安装PicGo</h2>
+<p><img src="https://txbucket-1300914992.cos.ap-shanghai.myqcloud.com/undefined20200119002828.png" alt="20200119002828.png" loading="lazy"><br>
+  </p>
+<h2 id="picgo设置">PicGo设置</h2>
+<p>在安装的vs-picgo介绍中,有详细的使用说明</p>
+<ul>
+<li>File--&gt;Preference--&gt;Settings设置自己的图床,我这里选择的是腾讯云的图床(收费.但是我先观望一下贵不贵嘻嘻嘻)</li>
+<li>图床的id等配置:注意Custom Url需要设置为图床上能进行网页图片打开的形式,例如我的为<code>https://txbucket-130.cos.ap-shanghai.myqcloud.com</code></li>
+</ul>
+<h2 id="在custom-uploadname上遇到的一些问题">在Custom UploadName上遇到的一些问题</h2>
+<figure data-type="image" tabindex="1"><img src="https://txbucket-1300914992.cos.ap-shanghai.myqcloud.com/undefined20200118233004.png" alt="20200118233004.png" loading="lazy"></figure>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mi>i</mi><mi>l</mi><mi>e</mi><mi>N</mi><mi>a</mi><mi>m</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">{fileName}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span><span class="mord mathdefault">e</span></span></span></span></span>{extName}可网页预览</li>
+</ul>
+<p><code>![20200118233004.png](https://txbucket-130.cos.ap-shanghai.myqcloud.com/undefined20200118233004.png)</code></p>
+<hr>
+<figure data-type="image" tabindex="2"><img src="https://txbucket-1300914992.cos.ap-shanghai.myqcloud.com/undefined20200118233239" alt="20200118233239" loading="lazy"></figure>
+<ul>
+<li>${fileName}无后缀打开窗口直接下载，md文件中可显示</li>
+</ul>
+<p><code>![20200118233239](https://txbucket-130.cos.ap-shanghai.myqcloud.com/undefined20200118233239)</code></p>
+<hr>
+<figure data-type="image" tabindex="3"><img src="https://txbucket-1300914992.cos.ap-shanghai.myqcloud.com/undefined.png" alt=".png" loading="lazy"></figure>
+<ul>
+<li>${extName}可网页预览,重复上传会覆盖原同名undifined文件</li>
+</ul>
+<p><code>![.png](https://txbucket-130.cos.ap-shanghai.myqcloud.com/undefined.png)</code></p>
+<hr>
+<figure data-type="image" tabindex="4"><img src="https://txbucket-1300914992.cos.ap-shanghai.myqcloud.com/undefined2020-1-18-23-45-51" alt="2020-1-18-23-45-51" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://txbucket-1300914992.cos.ap-shanghai.myqcloud.com/undefinedHowToUseVsPicGo2020-1-18-23-49-21" alt="HowToUseVsPicGo2020-1-18-23-49-21" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://txbucket-1300914992.cos.ap-shanghai.myqcloud.com/undefinedHowToUseVsPicGo-2020-1-18-23-50-31" alt="HowToUseVsPicGo-2020-1-18-23-50-31" loading="lazy"></figure>
+<ul>
+<li><code>${dateTime}</code> <code>${mdFileName}-${dateTime}</code> <code>${mdFileName}${dateTime}</code> 均无后缀</li>
+</ul>
+<p>本意是通过<code>date</code>替代<code>undefined</code>的图片命名规则.没有在它提供的方法内找到解决方案,就这样吧.</p>
+<h2 id="为上传的图片先命名">为上传的图片先命名</h2>
+<p>只要预先在文档中打好需要上传的名字,就能使得上传的图片为定义的名字</p>
+<figure data-type="image" tabindex="7"><img src="https://txbucket-1300914992.cos.ap-shanghai.myqcloud.com/undefinedpreName.png" alt="preName.png" loading="lazy"></figure>
+<p><code>![preName.png](https://txbucket-1300.cos.ap-shanghai.myqcloud.com/undefinedpreName.png)</code></p>
+<p>为什么我总是有个undefined......我也很迷糊啊</p>
 
               </div>
               <div class="post-footer">
@@ -302,7 +514,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://chenmo874300.github.io/post/cJjthn-GQ" title="12.23">12.23</a>
+      <a href="https://chenmo874300.github.io/post/zai-vscode-shang-shi-yong-picgo" title="在VsCode上使用PicGo">在VsCode上使用PicGo</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -311,21 +523,17 @@
   </ul>
   <div class="tags">
     
-      <a href="https://chenmo874300.github.io/tag/0PV4Phj8M"># DailyLife</a>
+      <a href="https://chenmo874300.github.io/tag/gmcbE-AHT"># IT Fields</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" href="https://chenmo874300.github.io/post/QE0jOzeuw">书</a class="nav-pc-next">
-        <a class="nav-mobile-prev" href="https://chenmo874300.github.io/post/QE0jOzeuw">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" href="https://chenmo874300.github.io/post/PSOyIrnac">冬至和饺子</a>
-        <a class="nav-mobile-next" href="https://chenmo874300.github.io/post/PSOyIrnac">下一篇</a>
+        <a class="nav-pc-next" href="https://chenmo874300.github.io/post/Cnl-5ftZt">寒假回家第一天</a>
+        <a class="nav-mobile-next" href="https://chenmo874300.github.io/post/Cnl-5ftZt">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
